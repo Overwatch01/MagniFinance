@@ -29,11 +29,6 @@ services:
       - 443
     environment:
       ASPNETCORE_ENVIRONMENT: Docker
-    # hostname: core
-    # networks:
-    #   crysto:
-    #     ipv4_address: "172.28.1.11"
-    # platform: linux/arm64/v8
     depends_on:
       - magnifinance.server
 
@@ -48,7 +43,3 @@ services:
     expose:
       - 80
       - 443
-
-    # environment:
-    #   NODE_ENV: production
-

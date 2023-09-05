@@ -20,7 +20,7 @@ FROM node:latest as build
 WORKDIR /usr/local/app
 
 # Add the source code to app
-COPY ["src/Client/MagniFinance.UI/package.json", "src/Client/MagniFinance.UI/package-lock.json", "./"]
+COPY src/Client/MagniFinance.UI/package.json ./
 
 # COPY ["package*.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 

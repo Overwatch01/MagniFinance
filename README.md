@@ -3,20 +3,18 @@
 The MagniFinance Assessment is a student management solution that allows college register courses,
 subjects, teachers and students of a university.  The application has a backend 
 
-# MagniFinance Assessment
-
 
 # MagniFinance Assessment (How to setup)
-Clone the repository
-Cd into Folder
-Run (docker compose up) command
-   - front end (http://localhost:5005)
-   - back end (http://localhost:5002)
+- clone the repository
+- cd into Folder
+- run `docker compose up` command
+   - front end (`http://localhost:5005`)
+   - back end (`http://localhost:5002`)
 
 To run locally
     - cd into src/Application/MagniFinance.Api
-    - update your connection string to point to local sql
-    - run dotnet run to start the backend end on  (http://localhost:5226)
+    - update your connection string to point to local sql server
+    - run dotnet run to start the backend end on  (`http://localhost:5226`)
 
     - cd into src/Client/MagniFinance.UI
     - run npm i to install node package

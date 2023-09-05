@@ -20,7 +20,6 @@ import { AppTopBarComponent } from './app.topbar.component';
             </div>
         </div>
         <p-toast></p-toast>
-        <!-- <app-config></app-config> -->
         <div class="layout-mask"></div>
     </div>
     `,

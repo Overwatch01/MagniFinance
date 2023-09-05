@@ -8,6 +8,7 @@
 				<tr>
 					<th>Name </th>
 					<th>Code</th>
+					<th>Duration</th>
 					<th></th>
 				</tr>
 			</ng-template>
@@ -16,6 +17,7 @@
 				<tr>
 					<td>{{rowData.name}}</td>
 					<td>{{rowData.courseCode}}</td>
+					<td>{{getCourseDuration(rowData.duration)}}</td>
 					<td>
 						<div class="flex flex-wrap gap-2">
 							<button pButton pRipple type="button" icon="pi pi-eye" title="View Detail" (click)="viewCourseDetail(rowData)" class="p-button-rounded p-button-success"></button>

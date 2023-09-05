@@ -59,4 +59,11 @@ export class CoursesComponent implements OnInit {
     this.router.navigate(['courses', course.id])
   }
 
+  getCourseDuration(duration: number): string {
+    if (duration > 1) 
+        return `${duration} Years`
+    else 
+      return `${duration} Year`
+  }
+
 }

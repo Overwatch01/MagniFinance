@@ -24,10 +24,10 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Magni College',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-                    { label: 'Teachers', icon: 'pi pi-fw pi-users', routerLink: ['/teachers'] },
+                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: [''] },
+                    { label: 'Courses', icon: 'pi pi-fw pi-bars', routerLink: ['/courses'] },
                     { label: 'Students', icon: 'pi pi-fw pi-users', routerLink: ['/students'] },
-                    { label: 'Courses', icon: 'pi pi-fw pi-bars', routerLink: ['/courses'] }
+                    { label: 'Teachers', icon: 'pi pi-fw pi-users', routerLink: ['/teachers'] }
                 ]
             }
         ];

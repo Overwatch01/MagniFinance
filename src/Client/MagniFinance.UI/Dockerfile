@@ -20,7 +20,7 @@ FROM node:latest as build
 WORKDIR /usr/local/app
 
 # Add the source code to app
-COPY src/Client/MagniFinance.UI /usr/local/app/
+COPY ["src/Client/MagniFinance.UI/package.json", "src/Client/MagniFinance.UI/package-lock.json", "./"]
 
 # COPY ["package*.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 
@@ -42,3 +42,15 @@ COPY --from=build /usr/local/app/dist/magni-finance.ui /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
+
+
+# FROM node:19-alpine AS build
+# WORKDIR /usr/src/app
+# COPY package.json package-lock.json ./
+# RUN npm install
+# COPY . .
+# RUN npm run build
+
+# FROM nginx:1.23.2-alpine
+# COPY ./nginx.conf /etc/nginx/nginx.conf
+# COPY --from=build /usr/src/app/dist/helloworld /usr/share/nginx/html

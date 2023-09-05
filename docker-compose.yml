@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+
+  magnifinance.server:
+    image: mcr.microsoft.com/mssql/server
+    user: root
+    container_name: mssql
+    restart: on-failure
+    environment:
+      - SA_PASSWORD=Password@2
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    hostname: magnifinance.server
+    volumes:
+      - ./mssql_volume:/vaclear/opt/mssql
+
+  magnifinance.api:
+    image: magnifinance.api
+    build:
+      context: .
+      dockerfile: src/Application/MagniFinance.Api/Dockerfile
+    ports:
+      - "5002:80"
+      - "5003:443"
+    expose:
+      - 80
+      - 443
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+    # hostname: core
+    # networks:
+    #   crysto:
+    #     ipv4_address: "172.28.1.11"
+    platform: linux/arm64/v8
+    depends_on:
+      - magnifinance.server
+
+  magnifinance.fe:
+    image: magnifinance.fe
+    build:
+      context: .
+      dockerfile: src/Client/MagniFinance.UI/Dockerfile
+
+    # environment:
+    #   NODE_ENV: production
+    ports:
+      - 3000:3000
+

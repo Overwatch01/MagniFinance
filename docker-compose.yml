@@ -42,9 +42,13 @@ services:
     build:
       context: .
       dockerfile: src/Client/MagniFinance.UI/Dockerfile
+    ports:
+      - "5005:80"
+      - "5006:443"
+    expose:
+      - 80
+      - 443
 
     # environment:
     #   NODE_ENV: production
-    # ports:
-    #   - 3000:3000
 

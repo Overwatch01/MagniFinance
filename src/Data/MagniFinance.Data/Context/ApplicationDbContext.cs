@@ -11,9 +11,9 @@ public class ApplicationDbContext : DbContext
     
     public DbSet<User> Users { get; set; }
     public DbSet<Student> Students { get; set; }
-    public DbSet<Subject> Subjects { get; set; }
     public DbSet<Teacher> Teachers { get; set; }
     public DbSet<Course> Courses { get; set; }
+    public DbSet<Subject> Subjects { get; set; }
   
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

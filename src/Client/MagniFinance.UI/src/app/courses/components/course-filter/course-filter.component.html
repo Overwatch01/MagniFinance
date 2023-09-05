@@ -1,0 +1,24 @@
+<p-toolbar>
+    <ng-template pTemplate="left">
+    <div class="formgroup-inline">
+        <div class="field">
+            <span class="p-input-icon-right">
+                <input pInputText type="text" placeholder="Course Name" (change)="onFilterChange()" [(ngModel)]="selectedFilter.name" />
+                <i class="pi pi-search"></i>
+            </span>
+        </div>
+        <div class="field">
+            <span class="p-input-icon-right">
+                <input pInputText type="text" placeholder="Code" (change)="onFilterChange()" [(ngModel)]="selectedFilter.code" />
+                <i class="pi pi-search"></i>
+            </span>
+        </div>
+    </div>
+    </ng-template>
+    <ng-template pTemplate="right">
+        <div class="flex flex-wrap gap-2">
+            <button pButton pRipple label="Clear Filters" class="p-button-raised" (click)="clearFilters()"></button>
+            <button pButton pRipple label="Add Course" class="p-button-raised" (click)="showForm()" icon="pi pi-plus" class="p-button-success mr-2"></button>
+        </div>
+    </ng-template>
+</p-toolbar>

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { filter, Subscription } from 'rxjs';
 import { LayoutService } from "../services/app.layout.service";
 import { AppSidebarComponent } from "./app.sidebar.component";
@@ -18,10 +19,12 @@ import { AppTopBarComponent } from './app.topbar.component';
                 <router-outlet></router-outlet>
             </div>
         </div>
+        <p-toast></p-toast>
         <!-- <app-config></app-config> -->
         <div class="layout-mask"></div>
     </div>
-    `
+    `,
+    'providers': [MessageService]
 })
 
 export class AppMainComponent implements OnDestroy {

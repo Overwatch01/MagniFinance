@@ -6,5 +6,6 @@ public class Teacher : BaseEntity
 {
     public double AnnualSalary { get; set; }
     public virtual User User { get; set; }
-    public virtual Course Course { get; set; }
+    
+    public virtual Course? Course { get; set; }
 }

@@ -3,7 +3,7 @@ using MagniFinance.Domain.Student.Models;
 
 namespace MagniFinance.Domain.Student.Commands;
 
-public class ModifyStudentCommand : Command
+public class UpsertStudentCommand : Command
 {
     public StudentEditModel Data { get; set; }
     

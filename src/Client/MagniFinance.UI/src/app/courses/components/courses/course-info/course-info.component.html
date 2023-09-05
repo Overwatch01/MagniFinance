@@ -1,0 +1,76 @@
+<div class="grid">
+	<div class="col-12">
+		<!-- <div class="card"> -->
+			<h4>{{courseName}} ({{courseCode}})</h4>
+            <div class="grid p-fluid">
+                <div class="col-12 md:col-8">
+                    <div class="card card-w-title">
+                        <h5>Subjects</h5>
+
+                        <p-table [value]="courseSubjects" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Code</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-subject>
+                                <tr>
+                                    <td style="width: 35%; min-width: 7rem;">{{subject.name}}</td>
+                                    <td style="width: 35%; min-width: 8rem;">{{subject.code}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                        
+                    </div>
+                </div>
+    
+                <div class="col-12 md:col-4">
+                    <div class="card card-w-title">
+                        <h5>Teacher</h5>
+                        <Span>Name: {{teacherName}}</Span> 
+                        <hr>
+                        <Span>email: {{teacherEmail}}</Span>
+                        <hr>
+                        <Span>salary: {{formatCurrency(teacherAnnualSalary)}}</Span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid p-fluid">
+                <div class="col-12 md:col-8">
+                    <div class="card card-w-title">
+                        <h5>Students</h5>
+                       
+                        <p-table [value]="courseStudents" [paginator]="true" [rows]="10" responsiveLayout="scroll">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Registration Number</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-student>
+                                <tr>
+                                    <td style="width: 35%; min-width: 7rem;">{{student.firstName}} {{student.lastName}}</td>
+                                    <td style="width: 35%; min-width: 8rem;">{{student.email}}</td>
+                                    <td style="width: 35%; min-width: 8rem;">{{student.registrationNumber}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                       
+                    </div>
+                </div>
+    
+                <div class="col-12 md:col-4">
+                    <div class="card card-w-title">
+                        <h5>Best Performing Student</h5>
+                        <!-- <p-panelMenu [model]="panelMenuItems"></p-panelMenu> -->
+                    </div>
+                </div>
+            </div>
+
+          
+	<!-- </div> -->
+</div>
+

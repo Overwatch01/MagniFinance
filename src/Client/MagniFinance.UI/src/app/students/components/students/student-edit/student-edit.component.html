@@ -1,1 +1,32 @@
-<p>student-edit works!</p>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <p-dialog [style]="{width: '50vw'}" [header]="addNewStudent ? 'Add Student' : 'Edit Student'" widgetVar="dlg" [(visible)]="visible" (onHide)="onClose()">
+        <!-- <p-messages [(value)]="errors"></p-messages> -->
+
+
+        <div class="p-fluid p-formgrid grid">
+            <div class="field col-12 md:col-6">
+                <label htmlFor="fname">First Name</label>
+                <input pInputText id="fname" name="firstName" type="text" [(ngModel)]="model.firstName" required />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="lname">Last Name</label>
+                <input pInputText id="lname" name="lastName" type="text" [(ngModel)]="model.lastName" required />
+            </div>
+        
+            <div class="field col-12 md:col-6">
+                <label htmlFor="fname">Other Name</label>
+                <input pInputText id="oname" name="otherName" type="text" [(ngModel)]="model.otherName" />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="email">Email</label>
+                <input pInputText id="email" name="email" type="email" [(ngModel)]="model.email" required />
+            </div>
+        </div>
+
+        <p-footer>
+            <button type="button" pButton icon="pi pi-fw pi-times" (click)="close()" label="Cancel"></button>
+            <button type="submit" pButton icon="pi pi-fw pi-check"  [label]="addNewStudent ? 'Save' : 'Update'" class="ui-button-success" [disabled]="form.form.invalid" [loading] = "saving"></button>
+          </p-footer>
+
+    </p-dialog>
+</form>

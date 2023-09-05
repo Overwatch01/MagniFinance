@@ -12,14 +12,13 @@ public class CoursesQueryHandler : QueryHandler<CoursesQuery, PaginationResultMo
     public CoursesQueryHandler(ApplicationDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
     {
     }
-
     
     public override async Task<PaginationResultModel<CourseModel>> Handle(CoursesQuery request, CancellationToken cancellationToken)
      => await GetCourses(request.Filter, cancellationToken);
     
     private async Task<PaginationResultModel<CourseModel>> GetCourses(CourseFilterModel filter, CancellationToken cancellationToken)
     {
-        var query = DbContext.Courses.Where(x => !x.IsDeleted).OrderByDescending(x => x.Id).AsQueryable();
+        var query = DbContext.Courses.Where(x => !x.IsDeleted).OrderBy(x => x.Id).AsQueryable();
 
         if (!string.IsNullOrEmpty(filter.Name))
             query = query.Where(x => x.Name.Contains(filter.Name));

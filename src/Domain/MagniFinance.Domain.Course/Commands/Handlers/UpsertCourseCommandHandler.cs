@@ -16,9 +16,8 @@ public class UpsertCourseCommandHandler : CommandHandler<UpsertCourseCommand>
 
     public UpsertCourseCommandHandler(ILogger<UpsertCourseCommandHandler> logger, ApplicationDbContext dbContext,
         IMapper mapper) : base(dbContext, mapper)
-    {
-        _logger = logger;
-    }
+        =>  _logger = logger;
+    
     
 
     public override async Task<Unit> Handle(UpsertCourseCommand request, CancellationToken cancellationToken)

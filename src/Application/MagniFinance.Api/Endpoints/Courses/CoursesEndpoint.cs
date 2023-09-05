@@ -14,7 +14,7 @@ public class CoursesEndpoint : Endpoint<CourseFilterModel, AppResponse<Paginatio
     
     public override void Configure()
     {
-        Get("/courses/{Name}/{CourseCode}/{Skip}/{Take}/{SortField}/{SortOrder}");
+        Get("/courses");
         AllowAnonymous();
     }
     

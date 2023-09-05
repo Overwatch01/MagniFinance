@@ -3,6 +3,8 @@ using MagniFinance.Domain.Course;
 using MagniFinance.Domain.Course.Commands;
 using MagniFinance.Domain.Student;
 using MagniFinance.Domain.Student.Commands;
+using MagniFinance.Domain.Teacher;
+using MagniFinance.Domain.Teacher.Commands;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -21,7 +23,8 @@ public static class Extensions
     {
         services.AddAutoMapper(
             typeof(StudentMappingProfile).Assembly,
-            typeof(CourseMappingProfile).Assembly
+            typeof(CourseMappingProfile).Assembly,
+            typeof(TeacherMappingProfile).Assembly
         );
         return services;
     }
@@ -29,8 +32,9 @@ public static class Extensions
     private static void AddMediatrAssemblies(this IServiceCollection services)
     {
         services.AddMediatR(cfg=>cfg.RegisterServicesFromAssemblies(
-            typeof(ModifyStudentCommand).Assembly,
-            typeof(UpsertCourseCommand).Assembly
+            typeof(UpsertStudentCommand).Assembly,
+            typeof(UpsertCourseCommand).Assembly,
+            typeof(UpsertTeacherCommand).Assembly
         ));
     }
 }

@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDataService(builder.Configuration);
 builder.Services.AddDomainService();
 
+builder.Services.AddCors(options
+    => options.AddPolicy(name: "CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
 builder.Services.AddFastEndpoints();
 builder.Services.SwaggerDocument(opt =>
@@ -23,7 +25,9 @@ builder.Services.SwaggerDocument(opt =>
 
 var app = builder.Build();
 
+
 app.Services.AutoMigrateDb();
+app.UseCors("CorsPolicy");
 
 app.UseFastEndpoints(config =>
 {

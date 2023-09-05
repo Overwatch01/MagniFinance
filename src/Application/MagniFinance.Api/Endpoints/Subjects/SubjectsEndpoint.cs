@@ -14,7 +14,7 @@ public class SubjectsEndpoint : Endpoint<SubjectFilterModel, AppResponse<Paginat
     
     public override void Configure()
     {
-        Get("/subjects/{Name}/{CourseCode}/{Skip}/{Take}/{SortField}/{SortOrder}");
+        Get("/subjects");
         AllowAnonymous();
     }
     

@@ -1,0 +1,42 @@
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+			<p-table #table styleClass="p-datatable-gridlines" [value]="data" [paginator]="true" [loading]="loading" [totalRecords]="totalRecords" 
+			[rows]="20" [lazy]="true" (onLazyLoad)="load($event)" [responsive]="true" [resizableColumns]="true" >
+
+			<ng-template pTemplate="header">
+				<tr>
+					<th pResizableColumn>First Name <p-sortIcon field="firstName"></p-sortIcon> </th>
+					<th>Other Name</th>
+					<th>Last Name</th>
+					<th>Email </th>
+					<th>Registration No</th>
+					<th></th>
+				</tr>
+			</ng-template>
+
+			<ng-template pTemplate="body" let-rowData>
+				<tr>
+					<td>{{rowData.firstName}}</td>
+					<td>{{rowData.otherName}}</td>
+					<td>{{rowData.lastName}}</td>
+					<td>{{rowData.email}}</td>
+					<td>{{rowData.registrationNumber}}</td>
+					<td>
+						<div class="flex flex-wrap gap-2">
+							<button pButton pRipple type="button" (click)="onEditStudent(rowData)" icon="pi pi-pencil" title="Edit Student" class="p-button-rounded p-button-success"></button>
+							<button pButton pRipple type="button" (click)="onDeleteStudent(rowData)" icon="pi pi-times" title="Delete Student" class="p-button-rounded p-button-danger"></button>
+						</div>
+					</td>
+				</tr>
+			</ng-template>
+
+			<ng-template pTemplate="emptymessage">
+				<tr>
+					<td [attr.colspan]="6" >No records found</td>
+				</tr>
+			</ng-template>
+			</p-table>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 namespace MagniFinance.Domain.Teacher.Models;
 
-public class TeacherModel
+public class TeacherModel : TeacherDetailModel
 {
     
 }

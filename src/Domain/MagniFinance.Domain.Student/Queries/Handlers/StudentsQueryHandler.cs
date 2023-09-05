@@ -23,6 +23,12 @@ public class StudentsQueryHandler : QueryHandler<StudentsQuery, PaginationResult
         if (!string.IsNullOrEmpty(filter.FirstName))
             query = query.Where(x => x.User.FirstName.Contains(filter.FirstName));
         
+        if (!string.IsNullOrEmpty(filter.OtherName))
+            query = query.Where(x => x.User.OtherName.Contains(filter.OtherName));
+        
+        if (!string.IsNullOrEmpty(filter.RegistrationNumber))
+            query = query.Where(x => x.RegistrationNumber.Contains(filter.RegistrationNumber));
+        
         if (!string.IsNullOrEmpty(filter.LastName))
             query = query.Where(x => x.User.LastName.Contains(filter.LastName));
 

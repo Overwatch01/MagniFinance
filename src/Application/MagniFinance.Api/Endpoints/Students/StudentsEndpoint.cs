@@ -14,7 +14,7 @@ public class StudentsEndpoint  : Endpoint<StudentFilterModel, AppResponse<Pagina
     
     public override void Configure()
     {
-        Get("/students/{FirstName}/{LastName}/{Skip}/{Take}/{SortField}/{SortOrder}");
+        Get("/students");
         AllowAnonymous();
     }
     

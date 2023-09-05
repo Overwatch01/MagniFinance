@@ -16,6 +16,7 @@
     <ItemGroup>
       <ProjectReference Include="..\MagniFinance.Domain.Course\MagniFinance.Domain.Course.csproj" />
       <ProjectReference Include="..\MagniFinance.Domain.Student\MagniFinance.Domain.Student.csproj" />
+      <ProjectReference Include="..\MagniFinance.Domain.Teacher\MagniFinance.Domain.Teacher.csproj" />
     </ItemGroup>
 
 </Project>

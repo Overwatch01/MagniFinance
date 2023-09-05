@@ -1,0 +1,15 @@
+<div class="grid">
+	<div class="col-12">
+		<div class="card">
+			<h5>Courses</h5>
+            	<magni-finance-course-filter (showCourseForm)="onShowCourseForm(null)"></magni-finance-course-filter>
+				
+				<magni-finance-courses (showCourseForm)="onShowCourseForm($event)" [reloadData]="reloadData" ></magni-finance-courses>
+
+		 <!-- <div *ngIf="editDialogVisibility">
+			<magni-finance-student-edit (visibleChange)="editDialogVisibility=$event" [record]="studentRecord" [visible]="editDialogVisibility" (recordSaved)="reloadData = !reloadData"></magni-finance-student-edit>
+		  </div>
+		</div> -->
+	</div>
+</div>
+

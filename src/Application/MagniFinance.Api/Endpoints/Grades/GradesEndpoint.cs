@@ -14,7 +14,7 @@ public class GradesEndpoint : Endpoint<GradeFilterModel, AppResponse<PaginationR
     
     public override void Configure()
     {
-        Get("/grades/{Name}/{CourseCode}/{Skip}/{Take}/{SortField}/{SortOrder}");
+        Get("/grades");
         AllowAnonymous();
     }
     

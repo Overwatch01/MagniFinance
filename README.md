@@ -18,11 +18,11 @@ subjects, teachers and students of a university.
 
      - cd into src/Client/MagniFinance.UI
      - run npm i to install node package
-     - run npm start to start the front end on  (http://localhost:4200)
+     - run npm start to start the front end on  (`http://localhost:4200`)
 
 
 # MagniFinance Assessment (Credits)
-    Angular Template -  https://github.com/primefaces/sakai-ng
+    Angular Template - https://github.com/primefaces/sakai-ng
     .Net Minimal API - https://fast-endpoints.com/
 
 # MagniFinance Assessment (License)

@@ -46,10 +46,11 @@
 # EXPOSE 80
 
 
-
-FROM node:19-alpine AS build
+FROM node:lts-alpine AS build
 WORKDIR /usr/src/app
-COPY src/Client/MagniFinance.UI/package.json src/Client/MagniFinance.UI/package-lock.json ./
+COPY src/Client/MagniFinance.UI /usr/src/app/
+# COPY src/Client/MagniFinance.UI/package.json src/Client/MagniFinance.UI/package-lock.json ./
+# COPY ["src/Client/MagniFinance.UI/package*.json", "src/Client/MagniFinance.UI/package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install
 COPY . .
 RUN npm run build
